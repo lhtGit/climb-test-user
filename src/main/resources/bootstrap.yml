@@ -1,0 +1,44 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /user/test
+spring:
+  application:
+    name: ${artifactId}
+  profiles:
+    active: ${profile.name}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${discovery.server-addr}
+        namespace: ${discovery.namespace}
+        group: ${discovery.group}
+      config:
+        server-addr:  ${config.server-addr}
+        namespace: ${config.namespace}
+        group: ${config.group}
+        file-extension: yml
+        shared-configs:
+          - dataId: db-climb.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - dataId: mybatis.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - dataId: redis.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - dataId: seata.yml
+            group: DEFAULT_GROUP
+            refresh: true
+
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: WARN
+swagger:
+  doc:
+    title: 用户测试模块
+    description: 用户测试
+    author: lht
+    version: v1.0
+    basePackage: com.example.climbtest
