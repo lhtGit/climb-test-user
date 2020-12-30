@@ -38,7 +38,7 @@ logging:
 swagger:
   doc:
     title: 用户测试模块
-    description: 用户测试
-    author: lht
-    version: v1.0
     basePackage: com.example.climbtest
+    description: 用户测试
+    contact:
+      name: lht
