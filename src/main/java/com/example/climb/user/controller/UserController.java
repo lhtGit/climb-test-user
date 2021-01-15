@@ -1,19 +1,19 @@
 package com.example.climb.user.controller;
 
 import com.climb.common.bean.Result;
-import com.climb.common.user.UserBaseInfo;
 import com.climb.common.user.auth.LoginUserInfo;
+import com.climb.common.user.bean.MenuInfo;
+import com.climb.common.user.bean.ResourceInfo;
+import com.climb.common.user.bean.Roleinfo;
 import com.climb.common.user.bean.UserInfoDetails;
-import com.climb.common.user.bean.base.DefaultMenuInfo;
-import com.climb.common.user.bean.base.DefaultResourceInfo;
-import com.climb.common.user.bean.base.DefaultRoleinfo;
-import com.climb.common.user.bean.base.DefaultUserInfoDetails;
 import com.climb.common.util.ResultUtil;
 import com.example.climb.user.vo.AuthorityInfoRes;
-import com.example.climb.user.vo.UserDetailsRes;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
@@ -24,8 +24,6 @@ import java.util.Date;
 @RestController
 @Slf4j
 public class UserController {
-
-
     /**
      * 登录并返回用户信息
      * @author lht
@@ -33,25 +31,25 @@ public class UserController {
      * @param loginUserInfo
      */
     @PostMapping("login")
-    public Result<UserInfoDetails> loginAndUserDetails(@RequestBody LoginUserInfo loginUserInfo){
+    public Result<com.climb.common.user.bean.UserInfoDetails> loginAndUserDetails(@RequestBody LoginUserInfo loginUserInfo){
         log.info("loginAndUserDetails:{}",loginUserInfo);
 
-        DefaultUserInfoDetails userInfoDetails = new DefaultUserInfoDetails();
-        DefaultMenuInfo defaultMenuInfo = new DefaultMenuInfo();
+        UserInfoDetails userInfoDetails = new UserInfoDetails();
+        MenuInfo defaultMenuInfo = new MenuInfo();
         defaultMenuInfo.setIcon("icon");
         defaultMenuInfo.setId("1");
         defaultMenuInfo.setName("menu name");
         defaultMenuInfo.setParentId("0");
         userInfoDetails.setMenuInfo(Lists.newArrayList(defaultMenuInfo));
 
-        DefaultResourceInfo resourceInfo = new DefaultResourceInfo();
+        ResourceInfo resourceInfo = new ResourceInfo();
         resourceInfo.setId("1");
         resourceInfo.setMethod("GET");
         resourceInfo.setName("resource name");
         resourceInfo.setPath("/test");
         userInfoDetails.setResourceInfo(Lists.newArrayList(resourceInfo));
 
-        DefaultRoleinfo roleinfo = new DefaultRoleinfo();
+        Roleinfo roleinfo = new Roleinfo();
         roleinfo.setId("1");
         roleinfo.setName("role name");
         userInfoDetails.setRoleInfo(Lists.newArrayList(roleinfo));
@@ -62,6 +60,7 @@ public class UserController {
         userInfoDetails.setPhone("1531515531");
         userInfoDetails.setUsername("admin");
         userInfoDetails.setGender(1);
+        userInfoDetails.setDate(new Date());
         return ResultUtil.success(userInfoDetails);
     }
 
