@@ -60,7 +60,7 @@ public class UserController {
         userInfoDetails.setPhone("1531515531");
         userInfoDetails.setUsername("admin");
         userInfoDetails.setGender(1);
-        userInfoDetails.setDate(new Date());
+        userInfoDetails.setBirthday(new Date());
         return ResultUtil.success(userInfoDetails);
     }
 
