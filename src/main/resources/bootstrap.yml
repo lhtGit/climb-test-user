@@ -28,10 +28,27 @@ spring:
           - dataId: redis.yml
             group: DEFAULT_GROUP
             refresh: true
-          - dataId: seata.yml
-            group: DEFAULT_GROUP
-            refresh: true
-
+seata:
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      group: DEFAULT_GROUP
+      server-addr: 192.168.13.3:8848
+      namespace: lhtGit
+      cluster: seata-server
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.13.3:8848
+      group: SEATA_GROUP
+      namespace: lhtGit
+      username: nacos
+      password: nacos
+  tx-service-group: tx_group
+  enable-auto-data-source-proxy: true
 logging:
   level:
     com.alibaba.nacos.client.config.impl: WARN

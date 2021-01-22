@@ -2,13 +2,18 @@ package com.example.climb.user.controller;
 
 
 import com.climb.common.bean.Result;
+import com.climb.common.exception.GlobalException;
 import com.climb.common.util.ResultUtil;
 import com.example.climb.user.entity.Test;
+import com.example.climb.user.feign.DemoFiegn;
 import com.example.climb.user.service.TestService;
+import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +38,9 @@ public class TestController {
     private TestService testService;
 
 
+    @Autowired
+    private DemoFiegn demoFiegn;
+
     /**
      * 新增test数据
      * @author lht
@@ -46,11 +54,16 @@ public class TestController {
             @ApiImplicitParam(value = "test name",required = true, dataTypeClass=String.class),
     })
     @GetMapping("save")
+    @GlobalTransactional
+    @Transactional
     public Result<Boolean> save(Integer id,String name){
         Test test = new Test();
         test.setId(id);
         test.setName(name);
-        return ResultUtil.success(testService.save(test));
+        testService.save(test);
+        String o = demoFiegn.get();
+        if(1==1)throw new GlobalException("test global trancsaction");
+        return ResultUtil.success();
 
     }
 }

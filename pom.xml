@@ -14,7 +14,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.climb</groupId>
+            <artifactId>climb-seata-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -23,6 +26,10 @@
         <dependency>
             <groupId>com.climb</groupId>
             <artifactId>climb-common-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.climb</groupId>
+            <artifactId>climb-feign-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>com.climb</groupId>
