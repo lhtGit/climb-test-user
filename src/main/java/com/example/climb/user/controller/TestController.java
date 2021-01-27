@@ -42,7 +42,7 @@ public class TestController {
     private DemoFiegn demoFiegn;
 
     /**
-     * 新增test数据
+     * 测试seata分布式事务
      * @author lht
      * @since  2020/12/28 16:16
      * @param id
@@ -55,14 +55,13 @@ public class TestController {
     })
     @GetMapping("save")
     @GlobalTransactional
-    @Transactional
     public Result<Boolean> save(Integer id,String name){
         Test test = new Test();
         test.setId(id);
         test.setName(name);
         testService.save(test);
         String o = demoFiegn.get();
-        if(1==1)throw new GlobalException("test global trancsaction");
+        if(1==1)throw new RuntimeException("test exception");
         return ResultUtil.success();
 
     }

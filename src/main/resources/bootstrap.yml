@@ -59,3 +59,16 @@ swagger:
     description: 用户测试
     contact:
       name: lht
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+ribbon:
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+  ReadTimeout: 30000
+  ConnectTimeout: 10000

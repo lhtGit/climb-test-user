@@ -11,6 +11,12 @@ import java.util.Map;
  */
 @FeignClient(value = "climb-neo4j-demo")
 public interface DemoFiegn {
+    /**
+     * 测试seata分布式事务是否包含了neo4j
+     * @author lht
+     * @since  2021/1/26 14:36
+     * @param
+     */
     @GetMapping("add")
     String get();
 }
