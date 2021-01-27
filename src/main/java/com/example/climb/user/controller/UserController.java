@@ -7,7 +7,6 @@ import com.climb.common.user.bean.ResourceInfo;
 import com.climb.common.user.bean.Roleinfo;
 import com.climb.common.user.bean.UserInfoDetails;
 import com.climb.common.util.ResultUtil;
-import com.example.climb.user.vo.AuthorityInfoRes;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +30,7 @@ public class UserController {
      * @param loginUserInfo
      */
     @PostMapping("login")
-    public Result<com.climb.common.user.bean.UserInfoDetails> loginAndUserDetails(@RequestBody LoginUserInfo loginUserInfo){
+    public Result<UserInfoDetails> loginAndUserDetails(@RequestBody LoginUserInfo loginUserInfo){
         log.info("loginAndUserDetails:{}",loginUserInfo);
 
         UserInfoDetails userInfoDetails = new UserInfoDetails();
@@ -71,12 +70,12 @@ public class UserController {
      * @since  2020/12/28 16:27
      */
     @GetMapping("auth/all")
-    public Result<AuthorityInfoRes> getAuthorityAll(){
-        AuthorityInfoRes authorityInfoRes = new AuthorityInfoRes();
-        authorityInfoRes.setId("1");
-        authorityInfoRes.setMethod("POST");
-        authorityInfoRes.setName("测试权限");
-        authorityInfoRes.setPath("/test/auth");
-        return ResultUtil.success(Lists.newArrayList(authorityInfoRes));
+    public Result<ResourceInfo> getAuthorityAll(){
+        ResourceInfo resourceInfo = new ResourceInfo();
+        resourceInfo.setId("1");
+        resourceInfo.setMethod("POST");
+        resourceInfo.setName("测试权限");
+        resourceInfo.setPath("/test/auth");
+        return ResultUtil.success(Lists.newArrayList(resourceInfo));
     }
 }
