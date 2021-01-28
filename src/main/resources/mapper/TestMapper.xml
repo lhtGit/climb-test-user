@@ -5,8 +5,12 @@
     <resultMap type="com.example.climb.user.entity.Test" id="TestMap">
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
-        <result property="age" column="age" jdbcType="INTEGER"/>
-        <result property="time" column="time" jdbcType="INTEGER"/>
     </resultMap>
 
+    <select id="shareSelect" resultMap="TestMap">
+        select * from test lock in share mode
+    </select>
+    <update id="updateAll">
+        UPDATE test SET NAME=CONCAT(NAME,'00000')
+    </update>
 </mapper>

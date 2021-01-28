@@ -1,31 +1,23 @@
 package com.example.climb.user.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.io.Serializable;
-
-
 /**
- * (Test)
- *
  * @author lht
- * @since 2020-12-28 14:38:03
+ * @since 2021/1/28 16:49
  */
 @Data
-@TableName("test")
-public class Test implements Serializable {
-    private static final long serialVersionUID = 449598473768475608L;
+@TableName("demo")
+public class Demo {
 
-    @TableId(value = "id",type = IdType.AUTO)
+    @TableId("id")
     private Integer id;
 
 
     @TableField("name")
     private String name;
-
 
 }

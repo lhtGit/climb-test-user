@@ -55,11 +55,13 @@ logging:
 swagger:
   doc:
     title: 用户测试模块
-    basePackage: com.example.climbtest
+    basePackage: com.example.climb.user.controller
     description: 用户测试
     contact:
       name: lht
-
+feign:
+  hystrix:
+    enabled: true
 hystrix:
   command:
     default:

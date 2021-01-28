@@ -2,7 +2,6 @@ package com.example.climb.user.controller;
 
 
 import com.climb.common.bean.Result;
-import com.climb.common.exception.GlobalException;
 import com.climb.common.util.ResultUtil;
 import com.example.climb.user.entity.Test;
 import com.example.climb.user.feign.DemoFiegn;
@@ -13,7 +12,6 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

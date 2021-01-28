@@ -1,11 +1,8 @@
 package com.example.climb.user.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.climb.user.entity.Test;
+import com.example.climb.user.entity.Demo;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
-
 
 /**
  * (Test)表数据库访问层
@@ -14,9 +11,7 @@ import java.util.List;
  * @since 2020-12-28 14:38:03
  */
 @Repository
-public interface TestDao extends BaseMapper<Test> {
+public interface DemoDao extends BaseMapper<Demo> {
 
 
-    List<Test> shareSelect();
-    int updateAll();
 }
