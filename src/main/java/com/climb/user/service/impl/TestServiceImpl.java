@@ -1,9 +1,9 @@
-package com.example.climb.user.service.impl;
+package com.climb.user.service.impl;
 
 import com.climb.mybatis.service.ExtensionServiceImpl;
-import com.example.climb.user.dao.TestDao;
-import com.example.climb.user.entity.Test;
-import com.example.climb.user.service.TestService;
+import com.climb.user.dao.TestDao;
+import com.climb.user.entity.Test;
+import com.climb.user.service.TestService;
 import org.springframework.stereotype.Service;
 
 /**

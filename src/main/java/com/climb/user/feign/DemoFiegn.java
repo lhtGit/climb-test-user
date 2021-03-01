@@ -1,10 +1,8 @@
-package com.example.climb.user.feign;
+package com.climb.user.feign;
 
-import com.example.climb.user.feign.fallback.DemoFallBack;
+import com.climb.user.feign.fallback.DemoFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.Map;
 
 /**
  * @author lht

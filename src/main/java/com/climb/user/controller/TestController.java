@@ -1,4 +1,4 @@
-package com.example.climb.user.controller;
+package com.climb.user.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -6,10 +6,10 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.climb.common.bean.Result;
 import com.climb.common.util.ResultUtil;
 import com.climb.mybatis.util.Pageable;
-import com.example.climb.user.dao.TestDao;
-import com.example.climb.user.entity.Test;
-import com.example.climb.user.feign.DemoFiegn;
-import com.example.climb.user.service.TestService;
+import com.climb.user.dao.TestDao;
+import com.climb.user.entity.Test;
+import com.climb.user.service.TestService;
+import com.climb.user.feign.DemoFiegn;
 import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;

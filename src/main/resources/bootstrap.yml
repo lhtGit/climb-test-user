@@ -52,6 +52,7 @@ seata:
 logging:
   level:
     com.alibaba.nacos.client.config.impl: WARN
+  config: classpath:log4j.xml
 swagger:
   doc:
     title: 用户测试模块

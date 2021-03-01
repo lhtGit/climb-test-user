@@ -1,7 +1,7 @@
-package com.example.climb.user.service;
+package com.climb.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.climb.user.entity.Test;
+import com.climb.user.entity.Test;
 
 /**
  * (Test)表服务接口

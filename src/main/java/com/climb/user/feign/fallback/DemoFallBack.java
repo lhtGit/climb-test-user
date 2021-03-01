@@ -1,7 +1,7 @@
-package com.example.climb.user.feign.fallback;
+package com.climb.user.feign.fallback;
 
 import com.climb.feign.hystrix.BaseFallbackFactory;
-import com.example.climb.user.feign.DemoFiegn;
+import com.climb.user.feign.DemoFiegn;
 import org.springframework.stereotype.Component;
 
 /**

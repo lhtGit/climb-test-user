@@ -1,4 +1,4 @@
-package com.example.climb.user.entity;
+package com.climb.user.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

@@ -1,4 +1,4 @@
-package com.example.climb.user.controller;
+package com.climb.user.controller;
 
 import com.climb.common.bean.Result;
 import com.climb.common.user.auth.LoginUserInfo;
