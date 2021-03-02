@@ -1,5 +1,6 @@
 package com.climb.user;
 
+import com.climb.common.annotations.EnableLog;
 import com.climb.swagger.annotations.EnableSwaggerApi;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @MapperScan("com.climb.user.dao")
 @EnableSwaggerApi
 @EnableFeignClients
+@EnableLog
 public class ClimbTestUserApplication {
 
     public static void main(String[] args) {
